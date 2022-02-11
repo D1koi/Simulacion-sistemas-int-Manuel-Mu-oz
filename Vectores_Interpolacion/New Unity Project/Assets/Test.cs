@@ -6,21 +6,24 @@ using UnityEngine;
 public class Test : MonoBehaviour
 {
 
-    public Vector2 vectorC;
+    /*public Vector2 vectorC;
     public Vector2 vectorD;
     public Vector2 vectorE;
-    public Vector2 vectorF;
+    public Vector2 vectorF;*/
 
     float escalar = 5;
     vector first = new vector(-3, 2);
     vector second = new vector(1, 0);
 
-    vector v1 = new vector(2, 2);
+    vector v1;
     vector v2 ;
-    vector v3 = new vector(-1, 3);
+    vector v3;
+    vector resutado;
     public Vector2 vector1;
     public Vector2 vector2;
     public Vector2 vector3;
+
+
     [SerializeField] [Range(0, 1)] float t;
     
 
@@ -54,21 +57,34 @@ public class Test : MonoBehaviour
         var resutado2 = vector.Suma(v1, v2);
         vector2 = new Vector2(resutado2.x, resutado2.y);*/
 
-        
 
 
-        vector1 = new Vector2(v1.x, v1.y);
-        
-        vector3 = new Vector2(v3.x, v3.y);
+        /* vector1 = new Vector2(v1.x, v1.y);
+
+         vector3 = new Vector2(v3.x, v3.y);*/
+        vector1 = new Vector2(2, 2);
+        vector3 = new Vector2(-1, 3);
+
+
+
     }
 
     // Update is called once per frame
 
 
-    private void Update()
+   void FixedUpdate()
     {
-        var resutado6 = vector.leep(v1, v3, t);
-        vector2 = new Vector2(resutado6.x, resutado6.y);
+
+        v1 = new vector(vector1.x, vector1.y);
+        v3 = new vector(vector3.x, vector3.y);
+
+        resutado = vector.leep(v1, v3, t);
+
+        vector2= new Vector2(resutado.x, resutado.y);
+
+
+       
+
         /* vector.draw(vectorC, Color.green);
          vector.draw(vectorD, Color.red);
          vector.draw(vectorE, Color.blue);
